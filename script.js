@@ -215,7 +215,7 @@ function initMap() {
 
       //Set icon to face the correct direction
       console.log("lat,lng: ", lat, lng)
-      alert("heading: ", hdng); // hdng is null -- device problem?
+      // alert("heading: ", hdng); // hdng is null -- device problem?
       const head_icon = {
         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
         scale: 5,
