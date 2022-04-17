@@ -188,11 +188,30 @@ function initMap() {
   const bounds_arr = [bounds_f1, bounds_f2, bounds_f3];
   const map_bounds =  bounds_arr[floor_num-1];
 
+
+  function getCurrentDirection(previousCoordinates, currentCoordinates) {
+    const diffLat = currentCoordinates.getPosition().lat() - previousCoordinates.getPosition().lat();
+    const diffLng = currentCoordinates.getPosition().lng() - previousCoordinates.getPosition().lng();
+    const anticlockwiseAngleFromEast = convertToDegrees(
+      Math.atan2(diffLat, diffLng)
+    );
+    const clockwiseAngleFromNorth = 90 - anticlockwiseAngleFromEast;
+    return clockwiseAngleFromNorth;
+    // helper function
+    function convertToDegrees(radian) {
+      return (radian * 180) / Math.PI; 
+    }
+  }
+  
   // Function to continuously update the user_marker
   let fit_zoom = true;
+  let previous = null;
   trackLocation({
-    onSuccess: ({ coords: { latitude: lat, longitude: lng, heading: hdng } }) => { //heading:hdng
+    onSuccess: ({ coords: { latitude: lat, longitude: lng } }) => { //heading:hdng
+      
+      previous = user_marker;
       user_marker.setPosition({ lat, lng });
+      let hdng = getCurrentDirection(previous, user_marker);
 
       //Set icon to face the correct direction
       console.log("lat,lng: ", lat, lng)
