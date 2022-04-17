@@ -1,30 +1,37 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Room Finder</title>
-    <link href="map.css" rel="stylesheet">
-    <script src="script.js"></script>
+  <meta http-equiv="content-type" content="text/html">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Room Finder</title>
+  <link href="map.css" rel="stylesheet">
+  <script src="script.js"></script>
 
-    <!-- Favicon  -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
+  <!-- Favicon  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
 </head>
 
 <body>
   <!--The div element for the map -->
   <div id="map"></div>
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-  <!-- NEW API KEY: AIzaSyBeBpXEyqTNlSr-OxfDnSumluXGbquOgOw -->
   <!--AIzaSyA2GlPmnO6ugua8wsUGZ9evNmaH77yhxTw -->
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2GlPmnO6ugua8wsUGZ9evNmaH77yhxTw&map_ids=1d764dc13899b61e&callback=initMap&libraries=&v=weekly"
-    async></script>
+    async>
+  </script>
+  <form action="./map.html" id="search-box">
+    <input type="text" placeholder="Search" class="search-bar" name="query">
+  </form>
+  <!-- Additional buttons here?? -->
+  <!-- <button class=button id="elevatorButton"><i class="fa-duotone fa-stairs"></i></button>
+  <button class=button id="stairwayButton"><i class="fa-duotone fa-stairs"></i></button>
+  <button class=button id="restroomButton"><i class="fa-solid fa-restroom"></i></button> -->
 </body>
 
 </html>
