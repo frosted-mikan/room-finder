@@ -202,7 +202,6 @@ function initMap() {
       return (radian * 180) / Math.PI; 
     }
   }
-  
   // Function to continuously update the user_marker
   let fit_zoom = true;
   let previous = null;
@@ -215,7 +214,7 @@ function initMap() {
 
       //Set icon to face the correct direction
       console.log("lat,lng: ", lat, lng)
-      // alert("heading: ", hdng); // hdng is null -- device problem?
+      alert("heading: ", hdng); 
       const head_icon = {
         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
         scale: 5,
